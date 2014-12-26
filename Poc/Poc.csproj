@@ -109,10 +109,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Orders.cs" />
+    <Compile Include="Models\OSBuilder.cs" />
+    <Compile Include="Models\ProductVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +154,7 @@
     <Content Include="Scripts\app\registration-module.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Controller\order-controller.js" />
     <Content Include="Scripts\Controller\product-controller.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -913,10 +918,10 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

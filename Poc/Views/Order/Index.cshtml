@@ -1,22 +1,23 @@
-﻿@model string
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
 @section JavaScriptsInHead
 {
-    <script src="~/Scripts/Controller/product-controller.js"></script>
+    <script src="~/Scripts/Controller/order-controller.js"></script>
     <script type="text/javascript">
-        registrationModule.factory('bootstrappedData', function () {
+        registrationModule.factory('bootstrappedDataOrders', function () {
             return {
-                products : @Html.Raw(Model)
+                orders : @Html.Raw(Model)
             };
         })
      </script>
 }
-<h2>Products {{1+1}}</h2>
+<h2>Orders</h2>
 
-<div class="container" ng-controller="ProductController" >
+<div class="container" ng-controller="OrderController" >
     
     <div class="row">
         <div class="span10">
@@ -26,9 +27,9 @@
                     <th>Price</th>
                    
                 </tr>
-                <tr ng-repeat="product in products">
-                    <td>{{product.name}}</td>
-                    <td>{{product.price}}</td>
+                <tr ng-repeat="order in orders">
+                    <td>{{order.orderId}}</td>
+                    <td>{{order.description}}</td>
                     
                 </tr>
             </table>
