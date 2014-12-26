@@ -3,10 +3,16 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@section JavaScriptsInHead
+{
+    <script src="~/Scripts/Controller/product-controller.js"></script>
+    <script type="text/javascript">
+        products = @Html.Raw(Model)
+     </script>
+}
 <h2>Products {{1+1}}</h2>
 
-<div class="container" ng-init="products = @Html.Raw(Model) ">
+<div class="container" ng-controller="ProductController" >
     
     <div class="row">
         <div class="span10">
