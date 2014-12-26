@@ -1,14 +1,16 @@
-﻿@{
+﻿@model string
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Products {{1+1}}</h2>
 
-<div class="container" ng-init="products = [ { name : 'Nokia', price : 'C12' } ] ">
+<div class="container" ng-init="products = @Html.Raw(Model) ">
+    
     <div class="row">
         <div class="span10">
-            <div class="table table-condensed table-hover">
+            <table class="table table-condensed table-hover">
                 <tr>
                     <th>Name</th>
                     <th>Price</th>
@@ -19,7 +21,7 @@
                     <td>{{product.price}}</td>
                     
                 </tr>
-            </div>
+            </table>
         </div>
     </div>
 
