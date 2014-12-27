@@ -36,5 +36,27 @@ namespace Poc.Models
 
 
     }
+
+    public class StoreVM
+    {
+        public string Products { get; set; }
+        public string Orders { get; set; }
+        private OSBuilder os { get; set; }
+        public StoreVM()
+        {
+            os = new OSBuilder();
+        }
+        public StoreVM Fetch()
+        {
+            var storeVM = new StoreVM 
+            { 
+             Products = os.getProducts(),
+             Orders =  os.getOrders()             
+            };
+
+            return storeVM;
+        }
+
+    }
      
 }

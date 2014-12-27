@@ -1,0 +1,17 @@
+﻿<h2>Orders</h2>
+    <div class="row">
+        <div class="span10">
+            <table class="table table-condensed table-hover">
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                   
+                </tr>
+                <tr ng-repeat="order in orders">
+                    <td>{{order.orderId}}</td>
+                    <td>{{order.description}}</td>
+                    
+                </tr>
+            </table>
+        </div>
+    </div>

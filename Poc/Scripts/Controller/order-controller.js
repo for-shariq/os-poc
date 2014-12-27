@@ -1,3 +1,3 @@
-﻿registrationModule.controller("OrderController", function ($scope, bootstrappedDataOrders) {
-    $scope.orders = bootstrappedDataOrders.orders;
+﻿registrationModule.controller("OrderController", function ($scope, bootstrappedData) {
+    $scope.orders = bootstrappedData.orders;
 });

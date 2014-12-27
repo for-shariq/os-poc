@@ -1,0 +1,39 @@
+﻿@model Poc.Models.StoreVM
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section JavaScriptsInHead
+{
+    <script src="~/Scripts/Controller/product-controller.js"></script>
+    <script src="~/Scripts/Controller/order-controller.js"></script>
+    <script type="text/javascript">
+        registrationModule.factory('bootstrappedData', function () {
+                
+            return {
+                products: @Html.Raw(Model.Products),
+                orders: @Html.Raw(Model.Orders)
+            };
+        });
+    </script>
+}
+<div class="container">
+ 
+    <div class="row">
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav"> 
+                    <li><span class="navbar-brand">Store</span></li>
+                </ul>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Store/Product">Products</a></li>
+                    <li><a href="/Store/Order">Orders</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div ng-view></div>
+</div>
