@@ -15,7 +15,7 @@ namespace Poc.Controllers
 
         public ActionResult Index()
         {
-            return View(store.Fetch());
+            return View();
         }
 
     }

@@ -1,5 +1,4 @@
-﻿@model Poc.Models.StoreVM
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -8,15 +7,8 @@
 {
     <script src="~/Scripts/Controller/product-controller.js"></script>
     <script src="~/Scripts/Controller/order-controller.js"></script>
-    <script type="text/javascript">
-        registrationModule.factory('bootstrappedData', function () {
-                
-            return {
-                products: @Html.Raw(Model.Products),
-                orders: @Html.Raw(Model.Orders)
-            };
-        });
-    </script>
+    <script src="~/Scripts/Controller/ordersRepository.js"></script>
+    <script src="~/Scripts/Controller/productRepository.js"></script>
 }
 <div class="container">
  

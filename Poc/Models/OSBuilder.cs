@@ -10,7 +10,7 @@ namespace Poc.Models
     public class OSBuilder
     {
                
-        public string getProducts()
+        public Product[] getProducts()
         {
             var products = new[] 
                 {
@@ -18,20 +18,21 @@ namespace Poc.Models
                     new Product { Name = "Samsung", Price = "10.22"},
                     new Product { Name = "HTC", Price = "11.22"}
                 };
-            var settings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            return JsonConvert.SerializeObject(products, Formatting.None, settings);
+            //var settings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+            return products;
         }
 
 
-        public string getOrders()
+        public Order[] getOrders()
         {
             var orders = new[] 
                 {
                    new Order {OrderId = "123455", Description = "Test Desc"},
                    new Order {OrderId = "123455", Description = "Test Desc"},
                 };
-            var settings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            return JsonConvert.SerializeObject(orders, Formatting.None, settings);
+           // var settings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+            //return JsonConvert.SerializeObject(orders, Formatting.None, settings);
+            return orders;
         }
 
 
@@ -50,8 +51,8 @@ namespace Poc.Models
         {
             var storeVM = new StoreVM 
             { 
-             Products = os.getProducts(),
-             Orders =  os.getOrders()             
+            // Products = os.getProducts(),
+           //  Orders =  os.getOrders()             
             };
 
             return storeVM;

@@ -9,15 +9,17 @@ using System.Web.Mvc;
 
 namespace Poc.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : JsonController
     {
         //
         // GET: /Product/
-
+        private readonly OSBuilder repo = new OSBuilder();
         public ActionResult Index()
         {
-            OSBuilder os = new OSBuilder();
-            return View("Index",null,os.getProducts());
+
+            return Json(repo.getProducts(), JsonRequestBehavior.AllowGet);
+            //OSBuilder os = new OSBuilder();
+            //return View("Index",null,os.getProducts());
         }
               
 

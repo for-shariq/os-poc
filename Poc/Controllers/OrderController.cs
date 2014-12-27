@@ -4,18 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+// delete orders and product controller and views no use now
 namespace Poc.Controllers
 {
-    public class OrderController : Controller
+    public class OrderController : JsonController
     {
         //
         // GET: /Order/
-
+        private readonly OSBuilder repo = new OSBuilder();
         public ActionResult Index()
         {
-            OSBuilder os = new OSBuilder();
-            return View("Index",null,os.getOrders());
+            return Json(repo.getOrders(), JsonRequestBehavior.AllowGet);
         }
 
     }
